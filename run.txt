@@ -1,0 +1,4 @@
+::javac GeneticParser.java
+::java GeneticParser [#of lines to skip] [#of samples]
+java GeneticParser 21 20
+pause > nul

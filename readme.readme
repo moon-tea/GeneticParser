@@ -1,0 +1,46 @@
+How to use this on Windows 
+
+First, you will need to install JDK and change your system PATH variables.
+1. To install the JDK software.
+	a. Go to http://java.sun.com/javase/downloads/index.jsp.
+	b.Select the appropriate JDK software and click Download.
+note: The JDK software is installed on your computer, for example, at C:\Program Files\Java\jdk1.6.0_02. You can move the JDK software to another location if desired.
+
+2. Set your path variable:
+	a. Open your Control Panel and search for "Edit the system environment variables" and run as an administrator.
+	b.On the Advanced tab, select Environment Variables, and then append to the system variable "PATH" or "path" by adding a semicolon and where your JDK is located
+	for example:  ;C:\Program Files\Java\jdk1.6.0_02\bin;
+
+After you have done this, you will not have to do this ever again on this computer.
+
+How to run it:
+Make two folders, one named "in" and one named "out".
+In the folder named "in", put in your large .dat files that need to be parsed.
+The folder named out doesn't need anything in it because it will receive the output.
+
+There is a batch file called "run." Double click this to run it with standard settings.
+(note: if the batch file is run.txt, change it to run.bat)
+
+If you want to change the variables, you can also do that.
+If you open run.bat in a text editor, like notepad, you will be able to edit it.
+
+if you find the line that says "java GeneticParser 21 20" those two numbers are the number you can change to change how the program works.
+The first number is the number of initial lines to ignore. 
+The second number is the number of samples 
+note: be careful, this program isn't as smart as it could be. it will mess up if:
+	- the samples are out of order,
+	- if there are less samples than the number you put
+	- the samples don't start with 1
+	- the samples don't increment by 1 each time.
+basically it expects something like 
+
+	1 4356...
+	1 3434...
+	...
+	2 3434...
+	2 5656...
+	...
+	3 5656...
+	3 7887...
+
+and nothing else.
